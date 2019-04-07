@@ -1,4 +1,3 @@
-[//----------------------------------------------------------------
 const data = {
   staff: [
     {fname:"Jane", lname:"Smith", balance:10},
@@ -65,18 +64,18 @@ console.log("Family Avg Age is ", famAgeAvg(family));
 
 
 //-------More Array Exercises (Really) - March 28, 2019 ---------
-// Using one of the callback functions we researched in the last exercise 
-// (but may have not used previously) create a new array for balances >= 1000. 
+// Using one of the callback functions we researched in the last exercise
+// (but may have not used previously) create a new array for balances >= 1000.
 
 function assertEquals (p1,p2){
-	if (p1 === p2){
-		console.log("ok->" + p1);
-		return true;
-	}
-	console.log("The two values are not the same." );
-	console.log("p1--> " + p1);
-	console.log("p2--> " + p2);
-	return false;
+  if (p1 === p2){
+    console.log("ok->" + p1);
+    return true;
+  }
+  console.log("The two values are not the same." );
+  console.log("p1--> " + p1);
+  console.log("p2--> " + p2);
+  return false;
 }
 
 let largeBalances = data.staff.filter(employee => employee.balance >= 1000);
@@ -85,11 +84,11 @@ assertEquals(largeBalances[0].fname, "Liam");
 assertEquals(largeBalances[1].fname, "Emma");
 
 //------ March 29, 2019 --------------------------------
-// Write a reduce function to total the balances. 
+// Write a reduce function to total the balances.
 
-// let tot = data.staff.reduce(function(prev, elem) {
-//   return prev + elem.balance;
-// });
-// console.log(elem.balance);
-//console.log(tot);
-//assertEquals(tot, 3823);
+let tot = data.staff.reduce((prev, curr) => {
+  return prev + curr.balance;
+},0);
+
+console.log(tot);
+assertEquals(tot, 3823);
